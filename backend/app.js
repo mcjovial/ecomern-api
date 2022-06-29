@@ -2,15 +2,15 @@ const path = require('path');
 const express = require('express');
 const colors = require('colors');
 const dotenv = require('dotenv').config();
-const { errorHandler } = require('./middleware/errorMiddleware');
+const { errorHandler } = require('./middleware/error.middleware');
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/api/goals', require('./routes/goalRoutes'));
-app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/goals', require('./routes/goal.routes'));
+app.use('/api/users', require('./routes/user.routes'));
 
 // Serve frontend
 if (process.env.NODE_ENV === 'production') {

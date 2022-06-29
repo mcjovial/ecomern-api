@@ -1,5 +1,5 @@
 const app = require('./backend/app');
-const connectDB = require('./backend/config/db');
+const { connectDB } = require('./backend/config/db');
 const port = process.env.PORT || 5000;
 
 connectDB();
