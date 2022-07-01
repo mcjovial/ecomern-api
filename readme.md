@@ -1,6 +1,4 @@
-# Goalsetter MERN app
-
-This is the goalsetter app from the [Learn the MERN Stack](https://www.youtube.com/watch?v=-0exw-9YJBo) series on YouTube.
+# ecoMERN api
 
 ## Usage
 
@@ -27,4 +25,4 @@ npm run server
 
 I am not sure how long this will be up
 
-https://mernappbrad.herokuapp.com/
+<!-- https://ecomernapi.herokuapp.com/ -->
