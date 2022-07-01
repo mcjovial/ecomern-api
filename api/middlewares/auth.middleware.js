@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const asyncHandler = require('express-async-handler')
 const User = require('../models/user.model')
 
-const protect = asyncHandler(async (req, res, next) => {
+const authCheck = asyncHandler(async (req, res, next) => {
   let token
 
   if (
@@ -33,4 +33,23 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 })
 
-module.exports = { protect }
+const adminCheck = async (req, res, next) => {
+
+  // token = req.headers.authorization.split(' ')[1]
+  
+  // console.log(req.user);
+
+  const { email } = req.user;
+
+  const adminUser = await User.findOne({ email }).exec();
+
+  if (adminUser.role !== "admin") {
+    res.status(403).json({
+      err: "Admin resource. Access denied.",
+    });
+  } else {
+    next();
+  }
+};
+
+module.exports = { authCheck, adminCheck }

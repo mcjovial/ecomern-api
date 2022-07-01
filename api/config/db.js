@@ -29,9 +29,15 @@ exports.dropAllCollections = async () => {
   }
 }
 
+let dbUri = process.env.MONGO_URI
+
+if (process.env.NODE_ENV === 'test') {
+  dbUri = process.env.TEST_MONGO_URI
+}
+
 exports.connectDB = async () => {
   try {
-    const conn = await mongoose.connect('mongodb+srv://mcjovial:19971104Mj@cluster0.ia2nm.mongodb.net/?retryWrites=true&w=majority')
+    const conn = await mongoose.connect(dbUri)
 
     console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline)
   } catch (error) {
