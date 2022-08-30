@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Goalsetter app for youtube tutorial",
   "main": "server.js",
+  "engines": {
+      "node": "16.x"
+  },
   "scripts": {
     "test": "NODE_ENV='test' jest --watchAll",
     "start": "node server.js",
