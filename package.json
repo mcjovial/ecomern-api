@@ -1,7 +1,7 @@
 {
-  "name": "mern-tutorial",
+  "name": "ecomern-api",
   "version": "1.0.0",
-  "description": "Goalsetter app for youtube tutorial",
+  "description": "ecomern api",
   "main": "server.js",
   "engines": {
       "node": "16.x"
